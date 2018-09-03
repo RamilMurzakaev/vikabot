@@ -86,7 +86,7 @@ def callback_inline(call):
 
 11:30 - 13:05 - ШТЕР - *ЛЕКЦИЯ*. 300/1
 
-11:30 - 13:05 - ШТЕР - *ЛЕКЦИЯ*. 300/1""",reply_markup=user_markup,parse_mode="Markdown")
+13:35 - 15:10 - ШТЕР - *ЛЕКЦИЯ*. 300/1""",reply_markup=user_markup,parse_mode="Markdown")
 
         elif call.data == 'cht':
             user_markup = types.InlineKeyboardMarkup()
@@ -98,7 +98,7 @@ def callback_inline(call):
 
 11:30 - 13:05 - БЖД - *ЛАБА*. 83,85,87а/ 6 корпус
 
-11:30 - 13:05 - БЖД - *ЛАБА*. 83,85,87а/ 6 корпус""",reply_markup=user_markup,parse_mode="Markdown")
+13:35 - 15:10 - БЖД - *ЛАБА*. 83,85,87а/ 6 корпус""",reply_markup=user_markup,parse_mode="Markdown")
 
         elif call.data == 'pt':
             user_markup = types.InlineKeyboardMarkup()
