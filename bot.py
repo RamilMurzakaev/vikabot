@@ -240,10 +240,10 @@ def wer(message):
 
 @bot.message_handler(content_types=['text'])
 def f(message):
-    if int(message.from_user.id) == 393132052:
+    if int(message.chat.id) == -222460169:
             bot.send_message(message.reply_to_message.forward_from.id, message.text)
     else:
-            bot.forward_message(393132052, message.from_user.id, message.message_id)
+            bot.forward_message(-222460169, message.chat.id, message.message_id)
 
 @server.route('/' + config.token, methods=['POST'])
 def getMessage():
