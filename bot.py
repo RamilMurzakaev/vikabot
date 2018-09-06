@@ -17,7 +17,9 @@ def otvet(message):
    user_markup.row(b1,b2)
    bot.send_message(message.from_user.id,"""Привет, котечки-котяяяятки❤️❤️❤️
 
-Выбирайте нужную недельку😘""",reply_markup=user_markup)
+Выбирайте нужную недельку😘
+
+P.S. Вы можете писать сюда вопросы и я отвечу, как смогу)""",reply_markup=user_markup)
 
 @bot.callback_query_handler(func=lambda call: True)
 def callback_inline(call):
