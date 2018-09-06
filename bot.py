@@ -39,9 +39,19 @@ def callback_inline(call):
 
         elif call.data == 'nech':
             user_markup = types.InlineKeyboardMarkup()
-            b10 = types.InlineKeyboardButton(text='Назад',callback_data='back')
-            user_markup.add(b10)
-            bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text='Пока нет расписания на нечетную,извини((',reply_markup=user_markup)
+            bb = types.InlineKeyboardButton(text='Понедельник', callback_data='pn1')
+            bb1 = types.InlineKeyboardButton(text='Вторник', callback_data='vt1')
+            bb2 = types.InlineKeyboardButton(text='Среда', callback_data='sr1')
+            bb3 = types.InlineKeyboardButton(text='Четверг', callback_data='cht1')
+            bb4 = types.InlineKeyboardButton(text='Пятница', callback_data='pt1')
+            bb5 = types.InlineKeyboardButton(text='Суббота', callback_data='sb1')
+            bb6 = types.InlineKeyboardButton(text='Назад', callback_data='back')
+            user_markup.row(bb, bb1)
+            user_markup.row(bb2, bb3)
+            user_markup.row(bb4, bb5)
+            user_markup.add(bb6)
+            bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text='Выбери день)',reply_markup=user_markup)
+        
         elif call.data == 'back':
             user_markup = types.InlineKeyboardMarkup()
             b1 = types.InlineKeyboardButton(text='Четная', callback_data='chet')
@@ -86,7 +96,7 @@ def callback_inline(call):
 
 11:30 - 13:05 - ШТЕР - *ЛЕКЦИЯ*. 300/1
 
-13:35 - 15:10 - ШТЕР - *ЛЕКЦИЯ*. 300/1""",reply_markup=user_markup,parse_mode="Markdown")
+11:30 - 13:05 - ШТЕР - *ЛЕКЦИЯ*. 300/1""",reply_markup=user_markup,parse_mode="Markdown")
 
         elif call.data == 'cht':
             user_markup = types.InlineKeyboardMarkup()
@@ -98,7 +108,7 @@ def callback_inline(call):
 
 11:30 - 13:05 - БЖД - *ЛАБА*. 83,85,87а/ 6 корпус
 
-13:35 - 15:10 - БЖД - *ЛАБА*. 83,85,87а/ 6 корпус""",reply_markup=user_markup,parse_mode="Markdown")
+11:30 - 13:05 - БЖД - *ЛАБА*. 83,85,87а/ 6 корпус""",reply_markup=user_markup,parse_mode="Markdown")
 
         elif call.data == 'pt':
             user_markup = types.InlineKeyboardMarkup()
@@ -128,6 +138,88 @@ def callback_inline(call):
             user_markup.row(b7, b8)
             user_markup.add(b9)
             bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text='Выбери день)',reply_markup=user_markup)
+
+
+#НЕЧЕТНАЯ НЕДЕЛЯ НЕЧЕТНАЯ НЕДЕЛЯ НЕЧЕТНАЯ НЕДЕЛЯ НЕЧЕТНАЯ НЕДЕЛЯ НЕЧЕТНАЯ НЕДЕЛЯ НЕЧЕТНАЯ НЕДЕЛЯ НЕЧЕТНАЯ НЕДЕЛЯ НЕЧЕТНАЯ НЕДЕЛЯ НЕЧЕТНАЯ НЕДЕЛЯ НЕЧЕТНАЯ НЕДЕЛЯ НЕЧЕТНАЯ НЕДЕЛЯ НЕЧЕТНАЯ НЕДЕЛЯ
+
+
+        elif call.data == 'pn1':
+            user_markup = types.InlineKeyboardMarkup()
+            bс1 = types.InlineKeyboardButton(text='Назад', callback_data='back2')
+            user_markup.add(bс1)
+            bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text="""Понедельник, нечетная неделя:
+
+8:00 - 9:35 - Фазовые переходы - Самарин - *ЛЕКЦИЯ*. 310/1
+
+9:45 - 11:20 - Горное право - *СЕМИНАР*. 303/10
+
+11:30 - 13:05 - Геомеханика - *ЛЕКЦИЯ*. 306/1""", reply_markup=user_markup, parse_mode="Markdown")
+
+        elif call.data == 'vt1':
+            user_markup = types.InlineKeyboardMarkup()
+            bс2 = types.InlineKeyboardButton(text='Назад', callback_data='back2')
+            user_markup.add(bс2)
+            bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text="""Вторник, нечетная неделя:
+
+11:30 - 13:05 - Геомеханика - *ПРАКТИКА*. 306/1
+
+13:35 - 15:10 - Трубопровод - *ЛАБА*. 312/9
+
+15:20 - 16:55 - Трубопровод - *ЛАБА*. 312/9
+        
+17:05 - 18:40 - Трубопровод - *ЛАБА*. 312/9""", reply_markup=user_markup, parse_mode="Markdown")
+
+        elif call.data == 'sr1':
+            user_markup = types.InlineKeyboardMarkup()
+            bс3 = types.InlineKeyboardButton(text='Назад', callback_data='back2')
+            user_markup.add(bс3)
+            bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text="""Среда, нечетная неделя:
+
+9:45 - 11:20 - ШТЕР - *ПРАКТИКА*. 300/1
+
+11:30 - 13:05 - ШТЕР - *ПРАКТИКА*. 300/1""", reply_markup=user_markup, parse_mode="Markdown")
+
+        elif call.data == 'cht1':
+            user_markup = types.InlineKeyboardMarkup()
+            bс4 = types.InlineKeyboardButton(text='Назад', callback_data='back2')
+            user_markup.add(bс4)
+            bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text="""Четверг, нечетная неделя:
+
+9:45 - 16:55 - Взрывные работы *ЧАПАЕВСК*""", reply_markup=user_markup, parse_mode="Markdown")
+
+        elif call.data == 'pt1':
+            user_markup = types.InlineKeyboardMarkup()
+            bс5 = types.InlineKeyboardButton(text='Назад', callback_data='back2')
+            user_markup.add(bс5)
+            bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text="""Пятница, нечетная неделя:
+
+15:20 - 16:55 - Взрывные работы *ЛЕКЦИЯ* 793/7
+
+17:05 - 18:40 - Взрывные работы *ПРАКТИКА* 793/7""",reply_markup=user_markup, parse_mode="Markdown")
+
+        elif call.data == 'sb1':
+            user_markup = types.InlineKeyboardMarkup()
+            bс6 = types.InlineKeyboardButton(text='Назад', callback_data='back2')
+            user_markup.add(bс6)
+            bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text='Отдыхай😏',reply_markup=user_markup)
+
+
+
+        elif call.data == 'back2':
+            user_markup = types.InlineKeyboardMarkup()
+            bb = types.InlineKeyboardButton(text='Понедельник', callback_data='pn1')
+            bb1 = types.InlineKeyboardButton(text='Вторник', callback_data='vt1')
+            bb2 = types.InlineKeyboardButton(text='Среда', callback_data='sr1')
+            bb3 = types.InlineKeyboardButton(text='Четверг', callback_data='cht1')
+            bb4 = types.InlineKeyboardButton(text='Пятница', callback_data='pt1')
+            bb5 = types.InlineKeyboardButton(text='Суббота', callback_data='sb1')
+            bb6 = types.InlineKeyboardButton(text='Назад', callback_data='back')
+            user_markup.row(bb, bb1)
+            user_markup.row(bb2, bb3)
+            user_markup.row(bb4, bb5)
+            user_markup.add(bb6)
+            bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text='Выбери день)',reply_markup=user_markup)
+
         else:
             bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text='Это невозможно')
 
