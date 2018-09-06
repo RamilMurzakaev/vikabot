@@ -238,12 +238,10 @@ def wer(message):
 
 @bot.message_handler(content_types=['text'])
 def f(message):
-    if message.text == '🛢':
-       bot.send_message(message.from_user.id, """💵💵💵
-
-Жми /start""")
+    if int(message.from_user.id) == 393132052:
+            bot.send_message(message.reply_to_message.forward_from.id, message.text)
     else:
-        bot.send_message(message.from_user.id,'Не понимаю) Лучше жми /start')
+            bot.forward_message(393132052, message.from_user.id, message.message_id)
 
 @server.route('/' + config.token, methods=['POST'])
 def getMessage():
